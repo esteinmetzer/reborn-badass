@@ -1,43 +1,93 @@
+import { response } from "express";
+
 $(function() {
-    $(".devoured-btn").on("click", function(event) {
-      var id = $(this).data("id");
-      var newDevoured = $(this).data("newdevoured");
+
+    //Get request to Read data
+    $("").on("click",(event) => {
+      //console logs the clicked target for debugging purposes.
+      console.log(event.target)
+
   
-      var newDevouredState = {
-        devoured: newDevoured
-      };
-  
-      // Send the PUT request.
-      $.ajax("/api/burgers/"+id, {
-        type: "PUT",
-        data: newDevouredState
+      $.ajax("/", {
+        type: "GET",
       }).then(
-        function() {
-          console.log("changed devoured to", newDevoured);
+        function(response) {
+          console.log(response);
           // Reload the page to get the updated list
-          location.reload();
+          // location.reload();
         }
       );
     });
-  
-    $(".create-form").on("submit", function(event) {
-      // Make sure to preventDefault on a submit event.
-      event.preventDefault();
-  
-      var newBurger = {
-        name: $("#bb").val().trim(),
-        devoured: 0
+
+
+    //Post request to Create data
+    $("").on("click",(event) => {
+      //console logs the clicked target for debugging purposes.
+      console.log(event.target)
+
+      //object to be sent for the create call. 
+      const obj = {
+        name: 'test_name',
+        otherData: 'test other data'
       };
-  
-      // Send the POST request.
-      $.ajax("/api/burgers", {
+      // Send the PUT request.
+      $.ajax("/api/add", {
         type: "POST",
-        data: newBurger
+        data: obj
       }).then(
-        function() {
-          console.log("created new burger");
+        function(response) {
+          console.log(response);
           // Reload the page to get the updated list
-          location.reload();
+          //  location.reload();
+        }
+      );
+    });
+
+
+    //Post request to Update data
+    $("").on("click",(event) => {
+      //console logs the clicked target for debugging purposes.
+      console.log(event.target)
+
+  
+      const obj = {
+        name: 'test_name',
+        otherData: 'test other data'
+      };
+
+      // Send the PUT request.
+      $.ajax("/api/update", {
+        type: "POST",
+        data: obj
+      }).then(
+        function(response) {
+          console.log(response);
+          // Reload the page to get the updated list
+          //location.reload();
+        }
+      );
+    });
+
+    //Delete request to Delete data
+    $("").on("click",(event) => {
+      //console logs the clicked target for debugging purposes.
+      console.log(event.target)
+
+  
+      const obj = {
+        name: 'test_name',
+        otherData: 'test other data'
+      };
+
+      // Send the Delete request.
+      $.ajax("/api/delete", {
+        type: "DELETE",
+        data: obj
+      }).then(
+        function(response) {
+          console.log(response);
+          // Reload the page to get the updated list
+          //location.reload();
         }
       );
     });
