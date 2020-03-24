@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
   </head>
+
  
   <body>
     
@@ -28,16 +29,17 @@
               </span>
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
-              <div class="navbar-end">
-                <a class="navbar-item is-active">
-                  Home
-                </a>
-                <a class="navbar-item">
-                  Examples
-                </a>
-                <a class="navbar-item">
-                  Documentation
-                </a>
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
               </div>
             </div>
           </div>
@@ -80,64 +82,7 @@
                 </select>
               </div>
         </div>
-       
-        <div class="column is-2">
-          <div class="select">
-              <select>
-                <option>Address</option>
-                <option>With options</option>
-              </select>
-            </div>
-      </div>
-   </div>
-
-
-   
-
-      <div class="columns ">
-        <div class="column is-2">
-            <div class="select">
-                <select>
-                  <option>Items</option>
-                  <option>With options</option>
-                </select>
-              </div>
-        </div>
-        <div class="column is-2">
-            <div class="select">
-                <select>
-                  <option>Item Name</option>
-                  <option>With options</option>
-                </select>
-              </div>
-        </div>
-        <div class="column is-2">
-            <div class="select">
-                <select>
-                  <option>Supplier ID</option>
-                  <option>With options</option>
-                </select>
-              </div>
-        </div>
-        <div class="column is-2">
-            <div class="select">
-                <select>
-                  <option>Units Pllt</option>
-                  <option>With options</option>
-                </select>
-              </div>
-        </div>
-        <div class="column is-2">
-            <div class="select">
-                <select>
-                  <option>Projected Units</option>
-                  <option>With options</option>
-                </select>
-              </div>
-        </div>
-      </div>
-
-     
+      
     </form>
     
    
