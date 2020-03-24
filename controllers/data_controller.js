@@ -1,5 +1,5 @@
 const express = require('express');
-const models = require('../models/burger.js');
+const models = require('../models/data.js');
 const itemModel = models.items
 const supplierModel = models.suppliers
 var router = express.Router();
