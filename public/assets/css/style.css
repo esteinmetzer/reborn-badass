@@ -1,4 +1,10 @@
 
+body {
+  height: 50rem;
+  background-color:hsl(171, 100%, 41%);
+ 
+}
+
 .columns {
 
   margin-top: -.10rem;
@@ -26,4 +32,3 @@ select {
 h1 {
   text-align: center;
 }
-
