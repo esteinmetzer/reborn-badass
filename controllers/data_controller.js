@@ -12,7 +12,7 @@ router.get('/', function(req, res){
 
 });
 
-router.post("/api/add", function(req, res) {
+router.post("/api/add/:obj", function(req, res) {
     //create code here
     const obj = req.body;
     console.log(obj);
@@ -21,7 +21,7 @@ router.post("/api/add", function(req, res) {
 
 });
 
-router.post("/api/update", function(req, res) {
+router.post("/api/update/:obj", function(req, res) {
     //Update code here
     const obj = req.body;
     console.log(obj);
@@ -30,7 +30,7 @@ router.post("/api/update", function(req, res) {
 
 });
 
-router.delete('/api/delete', function(req, res){
+router.delete('/api/delete/:obj', function(req, res){
     const obj = req.body;
     const id = req.body;
     console.log(`obj = ${obj}  id = ${id}`);

@@ -31,7 +31,7 @@ $(function() {
         otherData: 'test other data'
       };
       // Send the PUT request.
-      $.ajax("/api/add", {
+      $.ajax("/api/add/" + obj , {
         type: "POST",
         data: obj
       }).then(
