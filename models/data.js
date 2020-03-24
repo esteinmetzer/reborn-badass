@@ -17,6 +17,11 @@ var items = {
     orm.update("item", objColVals, condition, function(res) {
       cb(res);
     });
+  },
+  delete: function(condition, cb) {
+    orm.delete("item", condition, function(res) {
+      cb(res);
+    });
   }
 };
 
