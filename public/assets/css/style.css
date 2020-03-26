@@ -1,13 +1,19 @@
 
 body {
   height: 45rem;
-  background-color:hsl(171, 100%, 41%);
+  background-image: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg);
+ background-size: cover;
  
 }
 
 .hero-body {
   border-bottom: solid black;
  
+}
+
+.has-bg-img { 
+  background: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg)center center; background-size:cover; 
+
 }
 
 .columns {
@@ -39,4 +45,8 @@ h1 {
 
 .button {
   width: 100%;
+}
+
+.tile {
+  width: 20%;
 }
