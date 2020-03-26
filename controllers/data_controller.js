@@ -5,37 +5,53 @@ const supplierModel = models.suppliers
 var router = express.Router();
 
 router.get('/', function(req, res){
-    //read code here
+    //call both models and combine and send to front end
     res.render();
     // all items and suppliers returned to homepage
     res.send(`'homepage'`);
 
 });
 
-router.post("/api/add/:obj", function(req, res) {
-    //create code here
-    const obj = req.body;
-    console.log(obj);
+router.post("/api/add/:dataType", function(req, res) {
 
-    res.send(`'add' called with obj: ${obj}`);
+    if(req.params.dataType === req.body.dataType)
+    {
+        //orm call to add new data
 
+        //call back code:
+        // res.send(`'add' called with obj: ${req.body}`);
+    }else
+    {
+        res.send("Error: please submit a valid dataType");
+    }
 });
 
-router.post("/api/update/:obj", function(req, res) {
+router.put("/api/update/:dataType", function(req, res) {
     //Update code here
-    const obj = req.body;
-    console.log(obj);
+    if(req.params.dataType === req.body.dataType)
+    {
+        //orm call to update data
 
-    res.send(`'Update' called with obj: ${obj}`);
-
+        //call back code:
+        // res.send(`'update' called with obj: ${req.body}`);
+    }else
+    {
+        res.send("Error: please submit a valid dataType");
+    }
 });
 
-router.delete('/api/delete/:obj', function(req, res){
-    const obj = req.body;
-    const id = req.body;
-    console.log(`obj = ${obj}  id = ${id}`);
+router.delete('/api/delete/:dataType', function(req, res){
 
-    res.send(`'delete' called with obj: ${obj} and id: ${id}`);
+    if(req.params.dataType === req.body.dataType)
+    {
+        //orm call to delete data
+
+        //call back code:
+        // res.send(`'Delete' called with obj: ${req.body}`);
+    }else
+    {
+        res.send("Error: please submit a valid dataType");
+    }
 });
 
   module.exports = router;
