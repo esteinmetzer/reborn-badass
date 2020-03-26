@@ -76,10 +76,23 @@ var orm = {
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += " WHERE id=";
+    queryString += " WHERE PRIMARY KEY=";
     queryString += condition;
 
-    console.log("Qstring  "+queryString);
+    console.log(queryString);
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+  delete: function(table, condition, cb) {
+    var queryString = "DELETE FROM " + table;
+    queryString += " WHERE PRIMARY KEY=";
+    queryString += condition;
+
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
