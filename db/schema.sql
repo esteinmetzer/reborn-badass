@@ -1,5 +1,5 @@
 CREATE DATABASE vendors_db;
-USE suppliers_db;
+USE vendors_db;
 CREATE TABLE supplier (
 supplier_id INT AUTO_INCREMENT,
 supplier_name VARCHAR(255),
