@@ -1,39 +1,64 @@
 const express = require('express');
 const models = require('../models/data.js');
-const itemModel = models.items
-const supplierModel = models.suppliers
 var router = express.Router();
 
 router.get('/', function(req, res){
     //read code here
     res.render('index');
     // all items and suppliers returned to homepage
+
 });
 
 router.post("/api/add/:obj", function(req, res) {
-    //create code here
-    const obj = req.body;
-    console.log(obj);
 
-    res.send(`'add' called with obj: ${obj}`);
-
+    if(req.params.obj === 'item')
+    {
+        models.items.create(['item_name', 'description', 'supplier_id', 'units_pllt','prj_units'], ['Hammers', 'basic hammers in 10ct', 1, 100, 500], (results)=>
+        {
+            res.send(results)
+        });
+    }else if(req.params.obj === 'supplier')
+    {
+        models.items.create([], [], (results)=>
+        {
+            res.send(results)
+        });
+    }
 });
 
-router.post("/api/update/:obj", function(req, res) {
-    //Update code here
-    const obj = req.body;
-    console.log(obj);
-
-    res.send(`'Update' called with obj: ${obj}`);
-
+router.put("/api/update/:obj", function(req, res) {
+    if(req.params.obj === 'item') 
+    {
+        models.items.update({item_name : `'${req.params.name}'`}, `item_id =`, (results)=>
+        {   
+            res.send(results);
+        }); 
+    }else if(req.params.obj === 'supplier')
+    {
+        models.suppliers.update({item_name : `'${req.params.name}'`}, `supplier_id =`, (results)=>
+        {   
+            res.send(results);
+        }); 
+    }
 });
 
-router.delete('/api/delete/:obj', function(req, res){
-    const obj = req.body;
-    const id = req.body;
-    console.log(`obj = ${obj}  id = ${id}`);
+router.delete('/api/delete/:obj/:id', function(req, res){
 
-    res.send(`'delete' called with obj: ${obj} and id: ${id}`);
+    if(obj === 'item')
+    {
+        models.items.delete(`item_id = ${req.params.id}`,  (results)=>
+        {
+            res.send(results);
+        });
+    }else if(obj === 'supplier')
+    {
+        models.suppliers.delete(`supplier_id = ${req.params.id}`,  (results)=>
+        {
+            res.send(results);
+        }); 
+    }
 });
+
+
 
   module.exports = router;
