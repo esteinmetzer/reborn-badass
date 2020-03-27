@@ -6,10 +6,8 @@ var router = express.Router();
 
 router.get('/', function(req, res){
     //read code here
-    res.render();
+    res.render('index');
     // all items and suppliers returned to homepage
-    res.send(`'homepage'`);
-
 });
 
 router.post("/api/add/:obj", function(req, res) {
