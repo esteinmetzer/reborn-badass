@@ -22,6 +22,11 @@ var items = {
     orm.delete("item", condition, function(res) {
       cb(res);
     });
+  },
+  truckCount: function(condition, cb){
+    orm.truckCount("item", condition, function(res) {
+      cb(res);
+    })
   }
 };
 
