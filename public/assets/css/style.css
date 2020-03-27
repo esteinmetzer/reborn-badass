@@ -1,9 +1,29 @@
 
+body {
+  height: 45rem;
+  background-image: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg);
+ background-size: cover;
+ 
+}
+
+.hero-body {
+  border-bottom:  10px solid black;
+ 
+}
+
+.has-bg-img { 
+  background: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg)center center; background-size:cover; 
+
+}
+
+.title {
+  font-size: 75px;
+}
+
 .columns {
 
   margin-top: -.10rem;
   margin-left: 0px;
-  margin-right: 300px;
   margin-bottom: 2px;
 
 }
@@ -27,3 +47,10 @@ h1 {
   text-align: center;
 }
 
+.button {
+  width: 100%;
+}
+
+.tile {
+  width: 20%;
+}

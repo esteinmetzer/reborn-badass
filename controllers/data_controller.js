@@ -3,12 +3,10 @@ const models = require('../models/data.js');
 var router = express.Router();
 
 router.get('/', function(req, res){
+    //read code here
+    res.render('index');
+    // all items and suppliers returned to homepage
 
-    res.render("index");
-
-    // models.items.all((results)=>
-    // {
-    // });
 });
 
 router.post("/api/add/:obj", function(req, res) {
