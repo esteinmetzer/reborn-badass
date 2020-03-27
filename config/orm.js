@@ -70,13 +70,13 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  // An example of objColVals would be {item_name: 'Nails', units_pllt: 200}
   update: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
-    queryString += " WHERE PRIMARY KEY=";
+    queryString += " WHERE ";
     queryString += condition;
 
     console.log(queryString);
@@ -89,10 +89,10 @@ var orm = {
     });
   },
   delete: function(table, condition, cb) {
-    var queryString = "DELETE FROM " + table;
-    queryString += " WHERE PRIMARY KEY=";
+    var queryString = "DELETE FROM " + table + " WHERE ";
     queryString += condition;
 
+    console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;

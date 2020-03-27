@@ -47,6 +47,9 @@ update: function(objColVals, condition, cb) {
 
 
 // Export the database functions for the controller (catsController.js).
-module.exports = items;
-module.exports = suppliers;
+module.exports = 
+{
+  items,
+  suppliers
+}
 

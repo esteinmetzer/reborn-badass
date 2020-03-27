@@ -1,57 +1,66 @@
 const express = require('express');
 const models = require('../models/data.js');
-const itemModel = models.items
-const supplierModel = models.suppliers
 var router = express.Router();
 
 router.get('/', function(req, res){
-    //call both models and combine and send to front end
-    res.render();
-    // all items and suppliers returned to homepage
-    res.send(`'homepage'`);
 
+    res.render("index");
+
+    // models.items.all((results)=>
+    // {
+    // });
 });
 
-router.post("/api/add/:dataType", function(req, res) {
+router.post("/api/add/:obj", function(req, res) {
 
-    if(req.params.dataType === req.body.dataType)
+    if(req.params.obj === 'item')
     {
-        //orm call to add new data
-
-        //call back code:
-        // res.send(`'add' called with obj: ${req.body}`);
-    }else
+        models.items.create(['item_name', 'description', 'supplier_id', 'units_pllt','prj_units'], ['Hammers', 'basic hammers in 10ct', 1, 100, 500], (results)=>
+        {
+            res.send(results)
+        });
+    }else if(req.params.obj === 'supplier')
     {
-        res.send("Error: please submit a valid dataType");
+        models.items.create([], [], (results)=>
+        {
+            res.send(results)
+        });
     }
 });
 
-router.put("/api/update/:dataType", function(req, res) {
-    //Update code here
-    if(req.params.dataType === req.body.dataType)
+router.put("/api/update/:obj", function(req, res) {
+    if(req.params.obj === 'item') 
     {
-        //orm call to update data
-
-        //call back code:
-        // res.send(`'update' called with obj: ${req.body}`);
-    }else
+        models.items.update({item_name : `'${req.params.name}'`}, `item_id =`, (results)=>
+        {   
+            res.send(results);
+        }); 
+    }else if(req.params.obj === 'supplier')
     {
-        res.send("Error: please submit a valid dataType");
+        models.suppliers.update({item_name : `'${req.params.name}'`}, `supplier_id =`, (results)=>
+        {   
+            res.send(results);
+        }); 
     }
 });
 
-router.delete('/api/delete/:dataType', function(req, res){
+router.delete('/api/delete/:obj/:id', function(req, res){
 
-    if(req.params.dataType === req.body.dataType)
+    if(obj === 'item')
     {
-        //orm call to delete data
-
-        //call back code:
-        // res.send(`'Delete' called with obj: ${req.body}`);
-    }else
+        models.items.delete(`item_id = ${req.params.id}`,  (results)=>
+        {
+            res.send(results);
+        });
+    }else if(obj === 'supplier')
     {
-        res.send("Error: please submit a valid dataType");
+        models.suppliers.delete(`supplier_id = ${req.params.id}`,  (results)=>
+        {
+            res.send(results);
+        }); 
     }
 });
+
+
 
   module.exports = router;
