@@ -1,41 +1,94 @@
 
-<div class="row burgerBox">
-   <h3>Eat da Burger!</h3>
-  <div class="col s6 orderedContainer">
-        <div class="orderedBox">
-          <h4>Ordered Burgers</h4>
-          <ul>
-            {{#each burgerdb}}
-            {{#unless devoured}}
-            {{> b/b-block devoured=true}}
-            {{/unless}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-      <div class="col s6 orderAgainContainer">
-
-        <div class="orderagainbox">
-          <h4>Yum! Want another?</h4>
-          <ul>
-            {{#each burgerdb}}
-            {{#if devoured}}
-            {{> b/b-block devoured=false}}
-            {{/if}}
-            {{/each}}
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class='displayBox row'>
-    <div class='s12'>
-        <form class='create-form'>
-            <h5><i class="far fa-clipboard fa-2x"> Place Order</i></h5>
-            <div class="form-group">
-                <input type="text" id="bb" name="name" placeholder="Burger name goes here!">
-                <button class="submit-btn" type="submit" name="action">Submit Order!</button>
+ 
+  <body class= "has-background-grey">
+    
+    <section class="hero is-small is-dark has-text-centered">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              
+              <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
             </div>
-        </form>    
-    </div>
-</div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="" name="psw" required>
+            
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+        <div class="hero-body">
+          
+          <div class="container">
+            <h1 class="title">
+             O.A.T
+            </h1>
+            
+          </div>
+        </div>
+      </section>
+    <br>
+
+    <form>
+          <div class="columns is-centered">
+                <div class="column is-3">
+                  <div class="select">
+                    <select>
+                      <option>Supplier</option>
+                      <option>With options</option>
+                    </select>
+                  </div>
+                </div>
+        
+            
+            <div class="column is-2">
+                <div class="select">
+                    <select>
+                      <option>Options</option>
+                      <option>View Allocation</option>
+                      <option>Add</option>
+                      <option>Delete</option>
+                      <option>Update</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="select">
+                    <select>
+                      <option>Select Item</option>
+                      <option></option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="column is-1">
+               <input class="button" type="submit" value="Submit">
+            </div>
+
+            <div class="column is-1">
+              <input class="button" type="reset" value="Reset">
+           </div>
+
+
+          
+        </form>
+    
+   
+  </body>
+  
+</html> 
