@@ -17,6 +17,11 @@ var items = {
     orm.update("item", objColVals, condition, function(res) {
       cb(res);
     });
+  },
+  delete: function(condition, cb) {
+    orm.delete("item", condition, function(res) {
+      cb(res);
+    });
   }
 };
 
@@ -42,6 +47,9 @@ update: function(objColVals, condition, cb) {
 
 
 // Export the database functions for the controller (catsController.js).
-module.exports = items;
-module.exports = suppliers;
+module.exports = 
+{
+  items,
+  suppliers
+}
 
