@@ -2,7 +2,7 @@
 body {
   height: 45rem;
   background-image: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg);
- background-size: cover;
+  background-size: cover;
  
 }
 
@@ -12,7 +12,8 @@ body {
 }
 
 .has-bg-img { 
-  background: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg)center center; background-size:cover; 
+  background: url(https://blog.shelving.com/wp-content/uploads/2019/10/boxes-new-768x341.jpg);
+   background-size:cover; 
 
 }
 
