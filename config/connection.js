@@ -8,7 +8,7 @@ if(process.env.JAWSDB_URL){
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "brb1992!!",
   database: "vendors_db"
 });}
 connection.connect(function(err){

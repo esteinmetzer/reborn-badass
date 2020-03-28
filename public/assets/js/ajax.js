@@ -40,13 +40,16 @@ const ajax =
 {
 
 
-  getAllItems: ()=>
+  getAllItems: (cb)=>
   {
-    $.ajax("/", {
+    $.ajax("/getall", {
       type: "GET",
     }).then(
       function(response) {
-        console.log(response);
+        response = JSON.parse(response);
+        const items = response.items;
+        const suppliers = response.supplier;
+        cb(items, suppliers);
       }
     );
   },
@@ -127,5 +130,3 @@ const ajax =
     }
   }
 }
-
-module.exports = ajax;

@@ -1,26 +1,27 @@
 const express = require('express');
 const models = require('../models/data.js');
 var router = express.Router();
+var path = require("path");
 
 const itemLayout = ['item_name', 'description', 'supplier_id', 'units_pllt', 'prj_units'];
 
-router.get('/', function(req, res){
-
-    let allThings;
+router.get('/getall', function(req, res){
+    let allThings=
+    {
+        items:[],
+        supplier: [],
+    };
     models.items.all((results)=>
     {
-        allThings += results;
+        allThings.items = results;
 
         models.suppliers.all((results)=>
         {
-            allThings += results;
-            console.log(allThings)
-            res.send(allThings);
-            res.render('index', allThings)
+            allThings.supplier = results;
+            console.log(JSON.stringify(allThings));
+            res.json(JSON.stringify(allThings));
         });
     });
-
-    // all items and suppliers returned to homepage
 });
 
 router.get('/allocation/:supplierId', function(req, res){
