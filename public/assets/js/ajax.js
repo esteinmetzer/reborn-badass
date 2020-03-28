@@ -1,12 +1,4 @@
-let testItem = 
-{
-  item_name: 'Test Name',
-  description: 'This is a test item', 
-  supplier_id: '123', 
-  units_pllt: '33', 
-  prj_units: '99',
-  dataType : 'item'
-}
+
 
 let vendor = 
 {
@@ -38,8 +30,6 @@ vendor:
 console.log("ajax.js script is up and running!");
 const ajax =
 {
-
-
   getAllItems: (cb)=>
   {
     $.ajax("/getall", {
@@ -49,26 +39,29 @@ const ajax =
         response = JSON.parse(response);
         const items = response.items;
         const suppliers = response.supplier;
-        cb(items, suppliers);
+        const curItemID = response.currentItemId;
+        console.log("ajax" +curItemID);
+        const curSupId = response.currentSupplierId;
+        cb(items, suppliers, curItemID, curSupId );
       }
     );
   },
 
-  getVolumeAllocation: (supplier_id)=>
+  getVolumeAllocation: (cb)=>
   {
-    $.ajax("/allocation/" + supplier_id, {
+    $.ajax("/api/allocation", {
       type: "GET",
     }).then(
       function(response) {
         console.log(`getVolumeAlloctation returned: ${response}`);
-        return response;
+        cb(response);
       }
     );
   },
 
   updateObj : (type, id, updatedAttribute, updatedAttributeVal)=>
   { 
-    type = toLowerCase(type);
+    type = type.toLowerCase();
     objToUpdate = 
     {
       updatedAttribute, 
@@ -91,9 +84,9 @@ const ajax =
     }
   },
 
-  createObj: (type, objToCreate)=>
+  createObj: (type, objToCreate, cb)=>
   { 
-    type = toLowerCase(type);
+    type = type.toLowerCase();
     if(type === "item" || type === "supplier")
     {
       $.ajax("/api/add/" + type, {
@@ -101,8 +94,8 @@ const ajax =
         data: objToCreate
       }).then(
         function(response) {
-          console.log(`getVolumeAlloctation returned: ${response}`);
-          return response;
+          console.log(`${type} has been created`);
+          cb(response);
         }
       );
     }else
@@ -111,22 +104,64 @@ const ajax =
     }
   },
 
-  deleteObj: (type, objToDeleteId)=>
+  deleteObj: (type, objToDeleteId, cb)=>
   {
-    type = toLowerCase(type);
+    type = type.toLowerCase();
     if(type === "item" || type === "supplier")
     {
       $.ajax("/api/delete/" + type + "/" + objToDeleteId, {
         type: "DELETE",
       }).then(
         function(response) {
-          console.log(`getVolumeAlloctation returned: ${response}`);
-          return response;
+          cb(response);
         }
       );
     }else
     {
       console.log('error: please submit a valid type "item" or "supplier"');
     }
-  }
+  },
+
+  loadPage: (htmlFileName)=>
+  {
+    $.ajax("/" + htmlFileName, {
+        type: "GET",
+      }).then(
+        function(response) {
+
+        }
+      );  
+  },
+  setCurrentIds: (supId, itemId, cb)=>
+    {
+        const obj = 
+        {
+            supId,
+            itemId
+        } 
+        $.ajax("/currentIds", {
+            type: "POST",
+            data: obj
+          }).then(
+            function(response) {
+              console.log(`currentIds have been updated`);
+              cb(response);
+            }
+          ); 
+    },
+
+    getSome: (type, cb)=>
+    {
+        $.ajax("/api/some/" + type, {
+            type: "GET",
+            data: obj
+          }).then(
+            function(response) {
+              cb(response);
+            }
+          ); 
+    },
+
+
 }
+

@@ -60,37 +60,34 @@
           <div class="columns is-centered">
                 <div class="column is-3">
                   <div class="select">
-                    <select>
-                      <option>Supplier</option>
-                      <option>With options</option>
+                    <select id="supplerList">
+                      <option>Add New</option>
+                      <option value="" selected disabled>Suppliers</option>
                     </select>
                   </div>
                 </div>
         
-            
-            <div class="column is-2">
-                <div class="select">
-                    <select>
-                      <option>Options</option>
-                      <option>View Allocation</option>
-
-                      <option value= "add.html">Add</option>
-
-                      <option>Add</option>
-         <option>Delete</option>
-                      <option>Update</option>
-                    </select>
-                  </div>
-            </div>
 
             <div class="column is-2">
                 <div class="select">
-                    <select>
+                    <select id="itemList">
                       <option>Select Item</option>
                       <option></option>
                     </select>
                   </div>
             </div>
+
+            <div class="column is-2">
+              <div class="select">
+                  <select id="itemAction">
+                    <option>Options</option>
+                    <option>View Allocation</option>
+                    <option>Add</option>
+                    <option>Delete</option>
+                    <option>Update</option>
+                  </select>
+                </div>
+          </div>
 
             <div class="column is-1">
                <input class="button" type="submit" value="Submit">
@@ -99,12 +96,15 @@
             <div class="column is-1">
               <input class="button" type="reset" value="Reset">
            </div>
+        </div>
 
 
           
         </form>
-    
-   
+            <br>
+            <br>
+            <h2 id="hint"></h2>
+
   </body>
 
   <script src="/assets/js/ajax.js"></script>

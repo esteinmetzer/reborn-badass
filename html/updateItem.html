@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title></title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+   </head>
+ 
+  <body>
+      <form id="add-item">
+        <div class="columns is-centered">
+            
+            <div class="column is-2">
+                <div class="field">
+                    <div class="control">
+                      <input id="item_name" class="input is-primary" type="text" placeholder="Item Name">
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="field">
+                    <div class="control">
+                      <input id="description" class="input is-primary" type="text" placeholder="Description">
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column is-2">
+              <div class="select">
+                <select id="supplerListUpdate">
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <div class="columns is-centered">
+            <div class="column is-2">
+                <div class="field">
+                    <div class="control">
+                      <input id="units_pllt" class="input is-primary" type="text" placeholder="Units Per Pallets">
+                    </div>
+                  </div>
+            </div>
+    
+            <div class="column is-2">
+                <div class="field">
+                    <div class="control">
+                      <input id="prj_units" class="input is-primary" type="text" placeholder="Proj. Allocation">
+                    </div>
+                  </div>
+            </div>
+
+            <div class="column is-1">
+                <input id="update-item" class="button" type="submit" value="Update">
+             </div>
+ 
+             <div class="column is-1">
+               <input id="reset" class="button" type="submit" value="Go Back">
+            </div>
+          </div>
+ 
+    
+       
+    
+      </form>
+
+  </body>
+
+  <script src="/assets/js/ajax.js"></script>
+  <script src="/assets/js/index.js"></script>
+  <script src="/assets/js/updateitem.js"></script>
+  
+</html> 

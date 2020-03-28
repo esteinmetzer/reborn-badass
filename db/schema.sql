@@ -18,3 +18,5 @@ units_pllt INT,
 prj_units INT,
 PRIMARY KEY(item_id)
 );
+
+select * from supplier;
