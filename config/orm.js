@@ -1,6 +1,7 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
+
 // Helper function for SQL syntax.
 // Let's say we want to pass 3 values into the mySQL query.
 // In order to write the query, we need 3 question marks.
@@ -100,7 +101,31 @@ var orm = {
 
       cb(result);
     });
+  },
+  truckCount: function(table, condition, cb){
+    var queryString = "SELECT * FROM "
+    queryString += table
+    queryString += " WHERE supplier_id ="
+    queryString += condition;
+
+    connection.query(queryString, function(err, result){
+      if (err) {
+        throw err;
+      }
+      let palletcount = 0;
+      let truckCount;
+      result.forEach(item=>{
+        item.palletsneeded = item.prj_units / item.units_pllt;
+        palletcount += item.palletsneeded;
+        truckCount = palletcount / 50;
+        truckCount = Math.floor(truckCount)+1;
+      });
+      cb(truckCount);
+
+
+    })
   }
+
 };
 
 // Export the orm object for the model (cat.js).
