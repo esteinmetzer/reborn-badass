@@ -1,1 +1,2 @@
-const ajax = require("../js/ajax.js");
+
+ajax.getVolumeAllocation()

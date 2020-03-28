@@ -1,4 +1,3 @@
-import e, { response } from "express";
 let testItem = 
 {
   item_name: 'Test Name',
