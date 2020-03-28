@@ -14,7 +14,6 @@
 
  
   <body class= "has-background-grey">
-    
     <section class="hero is-small is-dark has-text-centered">
       <div class="hero-head">
         <nav class="navbar">
@@ -70,8 +69,19 @@
             
             <div class="column is-2">
                 <div class="select">
-                    <select>
+                    <select onchange= "la(this.value)">
                       <option>Options</option>
+<<<<<<< HEAD
+=======
+<<<<<<<< HEAD:public/assets/css/index.html
+>>>>>>> master
+                      <option value="allocationpage.html">View Allocation</option>
+                      <option value="add.html">Add</option>
+                      <option>Delete</option>
+                      <option value="update.html">Update</option>
+<<<<<<< HEAD
+=======
+========
                       <option>View Allocation</option>
 
                       <option value= "add.html">Add</option>
@@ -79,6 +89,8 @@
                       <option>Add</option>
          <option>Delete</option>
                       <option>Update</option>
+>>>>>>>> master:public/index.html
+>>>>>>> master
                     </select>
                   </div>
             </div>
@@ -102,12 +114,23 @@
 
 
           
-        </form>
+     
+
+        <script>
+          function la(src)
+          {
+            window.location=src;
+
+          }
+        </script>
     
-   
+      </form>
   </body>
+<<<<<<< HEAD
+=======
 
   <script src="/assets/js/ajax.js"></script>
   <script src="/assets/js/index.js"></script>
+>>>>>>> master
   
 </html> 
