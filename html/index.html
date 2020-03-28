@@ -52,85 +52,59 @@
             
           </div>
         </div>
-      </section>
+    </section>
+
     <br>
 
     <form>
-          <div class="columns is-centered">
-                <div class="column is-3">
-                  <div class="select">
-                    <select>
-                      <option>Supplier</option>
-                      <option>With options</option>
-                    </select>
-                  </div>
+       <div class="columns is-centered">
+          <div class="column is-3">
+            <div class="select">
+              <select id="supplerList">
+                <option>Add New</option>
+                <option value="" selected disabled>Suppliers</option>
+              </select>
+            </div>
+          </div>  
+
+          <div class="column is-2">
+              <div class="select">
+                  <select id="itemList">
+                    <option>Select Item</option>
+                    <option></option>
+                  </select>
                 </div>
-        
+          </div>
             
-            <div class="column is-2">
-                <div class="select">
-                    <select onchange= "la(this.value)">
-                      <option>Options</option>
-<<<<<<< HEAD
-=======
-<<<<<<<< HEAD:public/assets/css/index.html
->>>>>>> master
-                      <option value="allocationpage.html">View Allocation</option>
-                      <option value="add.html">Add</option>
-                      <option>Delete</option>
-                      <option value="update.html">Update</option>
-<<<<<<< HEAD
-=======
-========
-                      <option>View Allocation</option>
-
-                      <option value= "add.html">Add</option>
-
-                      <option>Add</option>
-         <option>Delete</option>
-                      <option>Update</option>
->>>>>>>> master:public/index.html
->>>>>>> master
-                    </select>
-                  </div>
+          <div class="column is-2">
+            <div class="select">
+              <select id="itemAction">
+                <option>Options</option>
+                <option>View Allocation</option>
+                <option>Add</option>
+                <option>Delete</option>
+                <option>Update</option>
+              </select>
             </div>
+          </div>
 
-            <div class="column is-2">
-                <div class="select">
-                    <select>
-                      <option>Select Item</option>
-                      <option></option>
-                    </select>
-                  </div>
-            </div>
+          <div class="column is-1">
+              <input class="button" type="submit" value="Submit">
+          </div>
 
-            <div class="column is-1">
-               <input class="button" type="submit" value="Submit">
-            </div>
+          <div class="column is-1">
+            <input class="button" type="reset" value="Reset">
+          </div>
+      </div> 
+    </form>
 
-            <div class="column is-1">
-              <input class="button" type="reset" value="Reset">
-           </div>
+            <br>
+            <br>
+            <h2 id="hint"></h2>
 
-
-          
-     
-
-        <script>
-          function la(src)
-          {
-            window.location=src;
-
-          }
-        </script>
-    
-      </form>
   </body>
-<<<<<<< HEAD
-=======
 
   <script src="/assets/js/ajax.js"></script>
   <script src="/assets/js/index.js"></script>
->>>>>>> master
   
 </html> 

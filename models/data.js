@@ -2,6 +2,14 @@
 var orm = require("../config/orm.js");
 
 var items = {
+    some: function(condition,cb)
+    {
+      orm.some('item', condition,(res)=>
+      {
+        cb(res);
+      });
+    },
+
     all: function(cb) {
       orm.all("item", function(res) {
         cb(res);
@@ -31,6 +39,14 @@ var items = {
 };
 
 var suppliers = {
+  some: function(condition,cb)
+  {
+    orm.some("supplier", condition,(res)=>
+    {
+      cb(res);
+    });
+  },
+
   all: function(cb) {
     orm.all("supplier", function(res) {
       cb(res);
