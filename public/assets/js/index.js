@@ -1,1 +1,6 @@
-const ajax = require("../js/ajax.js");
+ajax.getAllItems((items, suppliers)=>
+{
+  console.log(items);
+  console.log(suppliers);
+});
+
