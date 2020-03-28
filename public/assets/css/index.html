@@ -71,12 +71,12 @@
             
             <div class="column is-2">
                 <div class="select">
-                    <select>
+                    <select onchange= "la(this.value)">
                       <option>Options</option>
-                      <option>View Allocation</option>
-                      <option value= "add.html">Add</option>
+                      <option value="allocationpage.html">View Allocation</option>
+                      <option value="add.html">Add</option>
                       <option>Delete</option>
-                      <option>Update</option>
+                      <option value="update.html">Update</option>
                     </select>
                   </div>
             </div>
@@ -100,9 +100,17 @@
 
 
           
-        </form>
+     
+
+        <script>
+          function la(src)
+          {
+            window.location=src;
+
+          }
+        </script>
     
-   
+      </form>
   </body>
   
 </html> 
