@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="java.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+  </head>
+
+ 
+  <body class= "has-background-grey">
+    public\assets\css\style.css
+    <section class="hero is-small is-dark has-text-centered">
+      <div class="hero-head">
+        <nav class="navbar">
+          <div class="container">
+            <div class="navbar-brand">
+              
+              <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </div>
+            <div id="navbarMenuHeroA" class="navbar-menu">
+              <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="" name="uname" required>
+            
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="" name="psw" required>
+            
+                <button type="submit">Login</button>
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+        <div class="hero-body">
+          
+          <div class="container">
+            <h1 class="title">
+             O.A.T
+            </h1>
+            
+          </div>
+        </div>
+      </section>
+    <br>
+
+    <form>
+          <div class="columns is-centered">
+                <div class="column is-3">
+                  <div class="select">
+                    <select>
+                      <option>Supplier</option>
+                      <option>With options</option>
+                    </select>
+                  </div>
+                </div>
+        
+            
+            <div class="column is-2">
+                <div class="select">
+                    <select onchange= "la(this.value)">
+                      <option>Options</option>
+                      <option value="allocationpage.html">View Allocation</option>
+                      <option value="add.html">Add</option>
+                      <option>Delete</option>
+                      <option value="update.html">Update</option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="column is-2">
+                <div class="select">
+                    <select>
+                      <option>Select Item</option>
+                      <option></option>
+                    </select>
+                  </div>
+            </div>
+
+            <div class="column is-1">
+               <input class="button" type="submit" value="Submit">
+            </div>
+
+            <div class="column is-1">
+              <input class="button" type="reset" value="Reset">
+           </div>
+
+
+          
+     
+
+        <script>
+          function la(src)
+          {
+            window.location=src;
+
+          }
+        </script>
+    
+      </form>
+  </body>
+  
+</html> 
